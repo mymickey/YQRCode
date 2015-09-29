@@ -13,7 +13,8 @@
 @interface ResultViewDataSource : KZBehaviour<UITableViewDataSource,UITableViewDelegate>
 - (IBAction)onOpenBtnClick:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong,nonatomic) NSMutableArray *rowDatas;
+@property (strong,nonatomic,readonly) NSMutableArray *rowDatas;
 -(void)addModel:(ResultItemModel *)model;
+-(void)removeModel:(ResultItemModel *)model cellIndexPath:(NSIndexPath *)indexPath;
 -(void)addScanResult:(NSString *)str;
 @end

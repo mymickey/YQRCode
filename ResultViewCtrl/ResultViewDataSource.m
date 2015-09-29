@@ -14,6 +14,7 @@ static NSString *const cellId = @"UrlResultCell";
 {
     NSIndexPath *_expandIndexPath;
     UrlResultTableViewCell *_urlPrototypeCell;
+    NSTimer *touchExpandTimer;
 }
 @end
 @implementation ResultViewDataSource
@@ -31,6 +32,13 @@ static NSString *const cellId = @"UrlResultCell";
     [_rowDatas addObject:model];
     [_tableView reloadData];
 }
+-(void)removeModel:(ResultItemModel * )model cellIndexPath:(NSIndexPath *)indexPath
+{
+    [_rowDatas removeObject:model];
+    if ([indexPath compare:_expandIndexPath] == NSOrderedSame) {
+        _expandIndexPath = nil;
+    }
+}
 -(void)addScanResult:(NSString *)str
 {
     NSError *err;
@@ -38,6 +46,19 @@ static NSString *const cellId = @"UrlResultCell";
     if (!err) {
         [self addModel:m];
     }
+}
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return YES - we will be able to delete all rows
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UrlResultTableViewCell *cell = (UrlResultTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    ResultItemModel *model = cell.dataModel;
+    [self removeModel:model cellIndexPath:indexPath];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -47,24 +68,24 @@ static NSString *const cellId = @"UrlResultCell";
 {
     UrlResultTableViewCell *cell = _urlPrototypeCell;
     ResultItemModel * m = [_rowDatas objectAtIndex:indexPath.row];
+    CGFloat lineHeight = [self tableView:tableView estimatedHeightForRowAtIndexPath:indexPath];
     [cell renderWithModel:m];
+    CGFloat height ;
     if (_expandIndexPath && ([_expandIndexPath compare:indexPath] == NSOrderedSame)) {
-        [cell expandDataView];
+        height = [cell calculateExpandHeight]  ;
     }
     else{
-        [cell compressedDataView];
+        height = lineHeight;
     }
-    return [cell getViewHeight];
+    return height+1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UrlResultTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
     ResultItemModel *model = [_rowDatas objectAtIndex:indexPath.row];
     [cell renderWithModel:model];
-    cell.indexPath = indexPath;
     if (_expandIndexPath && [indexPath compare:_expandIndexPath] == NSOrderedSame) {
         [cell expandDataView];
-        //[cell layoutIfNeeded];
     }
     else{
         [cell compressedDataView];
@@ -84,19 +105,38 @@ static NSString *const cellId = @"UrlResultCell";
 
 - (IBAction)onOpenBtnClick:(UIButton *)sender {
     UrlResultTableViewCell *cell = (UrlResultTableViewCell *)sender.superview.superview;
+    if (touchExpandTimer) {
+        [touchExpandTimer invalidate];
+    }
+    __weak typeof(self) weakSelf = self;
+    touchExpandTimer = [NSTimer timerWithTimeInterval:.2f target:weakSelf selector:@selector(didExpand:) userInfo:cell repeats:NO];
+    [[NSRunLoop  currentRunLoop] addTimer:touchExpandTimer forMode:NSDefaultRunLoopMode];
+}
+-(void)didExpand:(NSTimer *)timer
+{
+    UrlResultTableViewCell *cell = timer.userInfo;
+    [timer invalidate];
+    touchExpandTimer = nil;
+    NSIndexPath *currentClickIndexPath = [_tableView indexPathForCell:cell];
     NSIndexPath *oldPath = _expandIndexPath;
     NSMutableArray *paths = [NSMutableArray new];
-    if (oldPath && [oldPath compare:cell.indexPath] == NSOrderedSame) {
-        cell.indexPath = nil;
+    if (oldPath && [oldPath compare:currentClickIndexPath] == NSOrderedSame) {
         _expandIndexPath = nil;
     }
-    _expandIndexPath = cell.indexPath;
+    else{
+        _expandIndexPath = currentClickIndexPath;
+    }
     if (oldPath) {
         [paths addObject:oldPath];
     }
-    if (cell.indexPath) {
-        [paths addObject:cell.indexPath];
+    [paths addObject:currentClickIndexPath];
+    if ([paths count] == 2) {
+        if ([paths[0] compare:paths[1]] == NSOrderedSame ) {
+            [paths removeObjectAtIndex:0];
+        }
     }
+    [_tableView beginUpdates];
     [_tableView reloadRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationNone];
+    [_tableView endUpdates];
 }
 @end

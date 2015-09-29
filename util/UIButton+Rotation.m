@@ -15,7 +15,8 @@
 
 -(void)toggleState
 {
-    self.transform = CGAffineTransformMakeRotation( ( 180 * M_PI ) / 180 );
+    //self.transform = CGAffineTransformMakeRotation( ( 180 * M_PI ) / 180 );
+    [self setImage:[UIImage imageNamed:@"unfold-2"] forState:UIControlStateNormal];
 }
 
 

@@ -7,6 +7,8 @@ pod 'ObjectiveSugar'
 pod 'Mantle'
 pod 'EDColor'
 pod 'TMCache'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'UILabel+Copyable', '~> 1.0.0'
 end
 
 target 'YQRCode' do

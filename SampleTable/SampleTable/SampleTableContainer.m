@@ -8,6 +8,7 @@
 
 #import "SampleTableContainer.h"
 #import "SampleTableItem.h"
+#import "UILabel+Copyable.h"
 static CGFloat const titleAndRowCtVSpace = 4;
 static CGFloat const titleHeight = 18;
 @interface SampleTableContainer(){
@@ -37,6 +38,7 @@ static CGFloat const titleHeight = 18;
     _rowsContainer = [[UIView alloc] init];
     _tableTitle = [[UILabel alloc] init];
     _tableTitle.text= @"";
+    _tableTitle.copyingEnabled = YES;
     _tableTitle.font = [UIFont fontWithName:_tableTitle.font.familyName size:12];
     _rowsContainer.translatesAutoresizingMaskIntoConstraints = NO;
     _tableTitle.translatesAutoresizingMaskIntoConstraints = NO;
@@ -60,7 +62,7 @@ static CGFloat const titleHeight = 18;
                           views:viewDict
                           ];
     NSArray *label_rowCt_v_space = [NSLayoutConstraint
-                             constraintsWithVisualFormat:[NSString stringWithFormat:@"V:|[label]-%f-[rowCt]|",titleAndRowCtVSpace]
+                             constraintsWithVisualFormat:[NSString stringWithFormat:@"V:[label]-%f-[rowCt]|",titleAndRowCtVSpace]
                              options:0
                              metrics:nil
                              views:viewDict
@@ -114,5 +116,12 @@ static CGFloat const titleHeight = 18;
     [view.superview addConstraints:topConstraint];
     //[view.superview layoutIfNeeded];
 }
-
+-(CGFloat)calculateHeight
+{
+    CGFloat height;
+    CGFloat itemHeight = [SampleTableItem getItemHeight];
+    NSInteger itemCount = [[_dict allKeys] count];
+    height = itemHeight * itemCount + titleHeight + titleAndRowCtVSpace;
+    return height;
+}
 @end

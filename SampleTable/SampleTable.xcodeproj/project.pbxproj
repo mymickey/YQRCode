@@ -16,6 +16,7 @@
 		709BDCEE1B9A86370056B088 /* SampleTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCED1B9A86370056B088 /* SampleTableTests.m */; };
 		709BDCFB1B9AEB170056B088 /* SampleTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCFA1B9AEB170056B088 /* SampleTableItem.m */; };
 		709BDCFE1B9AEBAB0056B088 /* SampleTableContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCFD1B9AEBAB0056B088 /* SampleTableContainer.m */; };
+		70DBB69E1BA449C80074E8AF /* UILabel+Copyable.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DBB69D1BA449C80074E8AF /* UILabel+Copyable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		709BDCFA1B9AEB170056B088 /* SampleTableItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleTableItem.m; sourceTree = "<group>"; };
 		709BDCFC1B9AEBAB0056B088 /* SampleTableContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleTableContainer.h; sourceTree = "<group>"; };
 		709BDCFD1B9AEBAB0056B088 /* SampleTableContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleTableContainer.m; sourceTree = "<group>"; };
+		70DBB69C1BA449C80074E8AF /* UILabel+Copyable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Copyable.h"; sourceTree = "<group>"; };
+		70DBB69D1BA449C80074E8AF /* UILabel+Copyable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Copyable.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 		709BDCC51B9A86360056B088 = {
 			isa = PBXGroup;
 			children = (
+				70DBB69B1BA449C80074E8AF /* UILabel+Copyable */,
 				709BDCD01B9A86370056B088 /* SampleTable */,
 				709BDCEA1B9A86370056B088 /* SampleTableTests */,
 				709BDCCF1B9A86370056B088 /* Products */,
@@ -127,6 +131,15 @@
 				709BDCEC1B9A86370056B088 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70DBB69B1BA449C80074E8AF /* UILabel+Copyable */ = {
+			isa = PBXGroup;
+			children = (
+				70DBB69C1BA449C80074E8AF /* UILabel+Copyable.h */,
+				70DBB69D1BA449C80074E8AF /* UILabel+Copyable.m */,
+			);
+			path = "UILabel+Copyable";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				709BDCFE1B9AEBAB0056B088 /* SampleTableContainer.m in Sources */,
+				70DBB69E1BA449C80074E8AF /* UILabel+Copyable.m in Sources */,
 				709BDCDA1B9A86370056B088 /* ViewController.m in Sources */,
 				709BDCFB1B9AEB170056B088 /* SampleTableItem.m in Sources */,
 				709BDCD71B9A86370056B088 /* AppDelegate.m in Sources */,
@@ -362,6 +376,7 @@
 				INFOPLIST_FILE = SampleTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
@@ -372,6 +387,7 @@
 				INFOPLIST_FILE = SampleTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};

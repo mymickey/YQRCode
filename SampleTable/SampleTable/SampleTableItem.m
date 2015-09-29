@@ -8,6 +8,8 @@
 
 
 #import "SampleTableItem.h"
+#import "UILabel+Copyable.h"
+
 static const CGFloat itemHeight = 18;
 @interface SampleTableItem()
 {
@@ -49,6 +51,7 @@ static const CGFloat itemHeight = 18;
 {
     _d_key = [[UILabel alloc] init];
     _d_value = [[UILabel alloc] init];
+    _d_value.copyingEnabled = _d_key.copyingEnabled = YES;
     _d_value.text = valueStr;
     _d_key.text = keyStr;
     _d_key.font = [UIFont fontWithName:_d_key.font.familyName size:12];

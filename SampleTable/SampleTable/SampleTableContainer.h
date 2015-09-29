@@ -14,4 +14,5 @@
 @property (strong, nonatomic)  UILabel *tableTitle;
 @property (nonatomic,strong,readonly) NSArray *rows;
 -(instancetype)initWithData:(NSDictionary *)dict;
+-(CGFloat)calculateHeight;
 @end

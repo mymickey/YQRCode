@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "709BDCCD1B9A86370056B088"
-               BuildableName = "SampleTable.app"
-               BlueprintName = "SampleTable"
-               ReferencedContainer = "container:SampleTable.xcodeproj">
+               BlueprintIdentifier = "707864A11B9091380040079C"
+               BuildableName = "YQRCode.app"
+               BlueprintName = "YQRCode"
+               ReferencedContainer = "container:YQRCode.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "709BDCE61B9A86370056B088"
-               BuildableName = "SampleTableTests.xctest"
-               BlueprintName = "SampleTableTests"
-               ReferencedContainer = "container:SampleTable.xcodeproj">
+               BlueprintIdentifier = "707864BA1B9091380040079C"
+               BuildableName = "YQRCodeTests.xctest"
+               BlueprintName = "YQRCodeTests"
+               ReferencedContainer = "container:YQRCode.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "709BDCCD1B9A86370056B088"
+               BuildableName = "SampleTable.app"
+               BlueprintName = "SampleTable"
+               ReferencedContainer = "container:SampleTable/SampleTable.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +60,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "709BDCE61B9A86370056B088"
-               BuildableName = "SampleTableTests.xctest"
-               BlueprintName = "SampleTableTests"
-               ReferencedContainer = "container:SampleTable.xcodeproj">
+               BlueprintIdentifier = "707864BA1B9091380040079C"
+               BuildableName = "YQRCodeTests.xctest"
+               BlueprintName = "YQRCodeTests"
+               ReferencedContainer = "container:YQRCode.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "709BDCCD1B9A86370056B088"
-            BuildableName = "SampleTable.app"
-            BlueprintName = "SampleTable"
-            ReferencedContainer = "container:SampleTable.xcodeproj">
+            BlueprintIdentifier = "707864A11B9091380040079C"
+            BuildableName = "YQRCode.app"
+            BlueprintName = "YQRCode"
+            ReferencedContainer = "container:YQRCode.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +90,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "709BDCCD1B9A86370056B088"
-            BuildableName = "SampleTable.app"
-            BlueprintName = "SampleTable"
-            ReferencedContainer = "container:SampleTable.xcodeproj">
+            BlueprintIdentifier = "707864A11B9091380040079C"
+            BuildableName = "YQRCode.app"
+            BlueprintName = "YQRCode"
+            ReferencedContainer = "container:YQRCode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +109,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "709BDCCD1B9A86370056B088"
-            BuildableName = "SampleTable.app"
-            BlueprintName = "SampleTable"
-            ReferencedContainer = "container:SampleTable.xcodeproj">
+            BlueprintIdentifier = "707864A11B9091380040079C"
+            BuildableName = "YQRCode.app"
+            BlueprintName = "YQRCode"
+            ReferencedContainer = "container:YQRCode.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -106,7 +120,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "ad hoc distribution"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

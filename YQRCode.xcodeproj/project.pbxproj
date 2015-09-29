@@ -24,14 +24,13 @@
 		707864F61B92A8B10040079C /* ResultViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 707864F51B92A8B10040079C /* ResultViewDataSource.m */; };
 		707864F91B92ABCA0040079C /* UrlResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 707864F81B92ABCA0040079C /* UrlResultTableViewCell.m */; };
 		707864FD1B92AC910040079C /* ResultItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 707864FC1B92AC910040079C /* ResultItemModel.m */; };
-		707864FF1B92F0DC0040079C /* ExpandViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 707864FE1B92F0DC0040079C /* ExpandViewItem.xib */; };
-		707865031B92F3840040079C /* ExpandViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 707865021B92F3840040079C /* ExpandViewItem.m */; };
-		709BDCAC1B97D1D90056B088 /* ResultViewSelectBehaviour.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCAB1B97D1D90056B088 /* ResultViewSelectBehaviour.m */; };
 		709BDCB01B97E4640056B088 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCAF1B97E4640056B088 /* WebViewController.m */; };
 		709BDCB41B97F3090056B088 /* NavCtrlDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCB31B97F3090056B088 /* NavCtrlDelegate.m */; };
 		709BDCC41B99D7950056B088 /* UIButton+Rotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 709BDCC31B99D7950056B088 /* UIButton+Rotation.m */; };
 		70C012D01B9EEF4D001C1B2A /* SampleTableContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C012CF1B9EEF4D001C1B2A /* SampleTableContainer.m */; };
 		70C012D21B9EEF73001C1B2A /* SampleTableItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 70C012D11B9EEF73001C1B2A /* SampleTableItem.m */; };
+		70DBB6961BA319510074E8AF /* UrlResultTableViewCellDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DBB6951BA319510074E8AF /* UrlResultTableViewCellDelegate.m */; };
+		70DBB6A01BA44AD80074E8AF /* UILabel+Copyable.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DBB69F1BA44AD80074E8AF /* UILabel+Copyable.m */; };
 		BE080C592FA44830D820FA86 /* libPods-YQRCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49D899CBFA06ACD22B3DE4CC /* libPods-YQRCode.a */; };
 /* End PBXBuildFile section */
 
@@ -81,11 +80,6 @@
 		707864F81B92ABCA0040079C /* UrlResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlResultTableViewCell.m; sourceTree = "<group>"; };
 		707864FB1B92AC910040079C /* ResultItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultItemModel.h; sourceTree = "<group>"; };
 		707864FC1B92AC910040079C /* ResultItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultItemModel.m; sourceTree = "<group>"; };
-		707864FE1B92F0DC0040079C /* ExpandViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ExpandViewItem.xib; path = ResultViewCtrl/ExpandViewItem.xib; sourceTree = SOURCE_ROOT; };
-		707865011B92F3840040079C /* ExpandViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandViewItem.h; sourceTree = "<group>"; };
-		707865021B92F3840040079C /* ExpandViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandViewItem.m; sourceTree = "<group>"; };
-		709BDCAA1B97D1D90056B088 /* ResultViewSelectBehaviour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewSelectBehaviour.h; sourceTree = "<group>"; };
-		709BDCAB1B97D1D90056B088 /* ResultViewSelectBehaviour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewSelectBehaviour.m; sourceTree = "<group>"; };
 		709BDCAE1B97E4640056B088 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		709BDCAF1B97E4640056B088 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		709BDCB21B97F3090056B088 /* NavCtrlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavCtrlDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +88,10 @@
 		709BDCC31B99D7950056B088 /* UIButton+Rotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Rotation.m"; sourceTree = "<group>"; };
 		70C012CF1B9EEF4D001C1B2A /* SampleTableContainer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SampleTableContainer.m; path = SampleTable/SampleTable/SampleTableContainer.m; sourceTree = "<group>"; };
 		70C012D11B9EEF73001C1B2A /* SampleTableItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SampleTableItem.m; path = SampleTable/SampleTable/SampleTableItem.m; sourceTree = "<group>"; };
+		70CD578A1BB947560003D6A4 /* SampleTableContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SampleTableContainer.h; path = SampleTable/SampleTable/SampleTableContainer.h; sourceTree = "<group>"; };
+		70DBB6941BA319510074E8AF /* UrlResultTableViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlResultTableViewCellDelegate.h; sourceTree = "<group>"; };
+		70DBB6951BA319510074E8AF /* UrlResultTableViewCellDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrlResultTableViewCellDelegate.m; sourceTree = "<group>"; };
+		70DBB69F1BA44AD80074E8AF /* UILabel+Copyable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Copyable.m"; path = "SampleTable/UILabel+Copyable/UILabel+Copyable.m"; sourceTree = "<group>"; };
 		B272FD2E09CF7C6D12437F1A /* Pods-YQRCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YQRCode.release.xcconfig"; path = "Pods/Target Support Files/Pods-YQRCode/Pods-YQRCode.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +134,8 @@
 		707864991B9091380040079C = {
 			isa = PBXGroup;
 			children = (
+				70CD578A1BB947560003D6A4 /* SampleTableContainer.h */,
+				70DBB69F1BA44AD80074E8AF /* UILabel+Copyable.m */,
 				70C012D11B9EEF73001C1B2A /* SampleTableItem.m */,
 				70C012CF1B9EEF4D001C1B2A /* SampleTableContainer.m */,
 				709BDCC11B99D6DD0056B088 /* util */,
@@ -230,8 +230,8 @@
 			children = (
 				707864F11B9200940040079C /* ScanResultDispatcher.h */,
 				707864F21B9200940040079C /* ScanResultDispatcher.m */,
-				709BDCAA1B97D1D90056B088 /* ResultViewSelectBehaviour.h */,
-				709BDCAB1B97D1D90056B088 /* ResultViewSelectBehaviour.m */,
+				70DBB6941BA319510074E8AF /* UrlResultTableViewCellDelegate.h */,
+				70DBB6951BA319510074E8AF /* UrlResultTableViewCellDelegate.m */,
 			);
 			path = Behavious;
 			sourceTree = "<group>";
@@ -250,7 +250,6 @@
 		707864ED1B91FCA80040079C /* ResultViewCtrl */ = {
 			isa = PBXGroup;
 			children = (
-				707865001B92F35D0040079C /* ExpandView */,
 				707864EE1B91FD8B0040079C /* ResultViewController.h */,
 				707864EF1B91FD8B0040079C /* ResultViewController.m */,
 				707864F41B92A8B10040079C /* ResultViewDataSource.h */,
@@ -268,17 +267,6 @@
 				707864FC1B92AC910040079C /* ResultItemModel.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		707865001B92F35D0040079C /* ExpandView */ = {
-			isa = PBXGroup;
-			children = (
-				707864FE1B92F0DC0040079C /* ExpandViewItem.xib */,
-				707865011B92F3840040079C /* ExpandViewItem.h */,
-				707865021B92F3840040079C /* ExpandViewItem.m */,
-			);
-			name = ExpandView;
-			path = ExtendView;
 			sourceTree = "<group>";
 		};
 		709BDCAD1B97E4420056B088 /* WebviewCtrl */ = {
@@ -362,6 +350,7 @@
 					};
 					707864BA1B9091380040079C = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 3DJQDCA5TD;
 						TestTargetID = 707864A11B9091380040079C;
 					};
 				};
@@ -392,7 +381,6 @@
 			files = (
 				707864B11B9091380040079C /* Main.storyboard in Resources */,
 				707864B61B9091380040079C /* LaunchScreen.xib in Resources */,
-				707864FF1B92F0DC0040079C /* ExpandViewItem.xib in Resources */,
 				707864B31B9091380040079C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,17 +432,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70DBB6A01BA44AD80074E8AF /* UILabel+Copyable.m in Sources */,
 				70C012D21B9EEF73001C1B2A /* SampleTableItem.m in Sources */,
 				70C012D01B9EEF4D001C1B2A /* SampleTableContainer.m in Sources */,
 				709BDCB41B97F3090056B088 /* NavCtrlDelegate.m in Sources */,
 				707864D21B90BE7A0040079C /* SYQRCodeViewController.m in Sources */,
-				707865031B92F3840040079C /* ExpandViewItem.m in Sources */,
+				70DBB6961BA319510074E8AF /* UrlResultTableViewCellDelegate.m in Sources */,
 				707864AE1B9091380040079C /* ViewController.m in Sources */,
 				707864F01B91FD8B0040079C /* ResultViewController.m in Sources */,
 				709BDCC41B99D7950056B088 /* UIButton+Rotation.m in Sources */,
 				707864E01B914DDB0040079C /* KZBehaviour.m in Sources */,
 				707864F61B92A8B10040079C /* ResultViewDataSource.m in Sources */,
-				709BDCAC1B97D1D90056B088 /* ResultViewSelectBehaviour.m in Sources */,
 				707864F31B9200940040079C /* ScanResultDispatcher.m in Sources */,
 				707864F91B92ABCA0040079C /* UrlResultTableViewCell.m in Sources */,
 				707864AB1B9091380040079C /* AppDelegate.m in Sources */,
@@ -505,6 +493,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		703AC7451BB96B6E00C7261A /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/SampleTable/**",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "aafda7ba-c1e8-425c-b3b7-bad58e82dc11";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "ad hoc distribution";
+		};
+		703AC7461BB96B6E00C7261A /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B272FD2E09CF7C6D12437F1A /* Pods-YQRCode.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: ZHAO WEI (3DJQDCA5TD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: ZHAO WEI (3DJQDCA5TD)";
+				INFOPLIST_FILE = YQRCode/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6439e573-df69-4ffd-a6b4-f48e257116cf";
+			};
+			name = "ad hoc distribution";
+		};
+		703AC7471BB96B6E00C7261A /* ad hoc distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = YQRCodeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YQRCode.app/YQRCode";
+			};
+			name = "ad hoc distribution";
+		};
 		707864C31B9091380040079C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -549,6 +613,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "aafda7ba-c1e8-425c-b3b7-bad58e82dc11";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -590,6 +655,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "aafda7ba-c1e8-425c-b3b7-bad58e82dc11";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -600,9 +666,13 @@
 			baseConfigurationReference = 1AAE0AFE5D76D88D58D036A6 /* Pods-YQRCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = YQRCode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6439e573-df69-4ffd-a6b4-f48e257116cf";
 			};
 			name = Debug;
 		};
@@ -611,9 +681,13 @@
 			baseConfigurationReference = B272FD2E09CF7C6D12437F1A /* Pods-YQRCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = YQRCode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6439e573-df69-4ffd-a6b4-f48e257116cf";
 			};
 			name = Release;
 		};
@@ -621,6 +695,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -632,6 +708,7 @@
 				INFOPLIST_FILE = YQRCodeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YQRCode.app/YQRCode";
 			};
 			name = Debug;
@@ -640,6 +717,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -647,6 +726,7 @@
 				INFOPLIST_FILE = YQRCodeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YQRCode.app/YQRCode";
 			};
 			name = Release;
@@ -659,6 +739,7 @@
 			buildConfigurations = (
 				707864C31B9091380040079C /* Debug */,
 				707864C41B9091380040079C /* Release */,
+				703AC7451BB96B6E00C7261A /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -668,6 +749,7 @@
 			buildConfigurations = (
 				707864C61B9091380040079C /* Debug */,
 				707864C71B9091380040079C /* Release */,
+				703AC7461BB96B6E00C7261A /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -677,6 +759,7 @@
 			buildConfigurations = (
 				707864C91B9091380040079C /* Debug */,
 				707864CA1B9091380040079C /* Release */,
+				703AC7471BB96B6E00C7261A /* ad hoc distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

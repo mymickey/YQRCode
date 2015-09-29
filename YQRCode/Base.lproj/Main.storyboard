@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="scan" id="Udo-gu-cAf"/>
+                    <tabBarItem key="tabBarItem" title="Scan" image="search" id="Udo-gu-cAf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhG-LH-RHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <customObject id="2ZS-sj-0cX"/>
@@ -96,14 +96,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wle-zs-vix" id="z83-lU-LCV">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-9b-KAZ">
-                                                    <rect key="frame" x="8" y="11" width="250" height="21"/>
+                                                <label opaque="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7aP-9b-KAZ">
+                                                    <rect key="frame" x="8" y="8" width="250" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Bp-pw-Gg3" userLabel="expandView">
                                                     <rect key="frame" x="0.0" y="44" width="320" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="999" id="O4l-Ya-Sy8"/>
+                                                    </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0l-1r-PRZ" userLabel="expandBtn">
                                                     <rect key="frame" x="278" y="0.0" width="44" height="44"/>
@@ -124,7 +127,6 @@
                                             <constraints>
                                                 <constraint firstItem="7aP-9b-KAZ" firstAttribute="leading" secondItem="z83-lU-LCV" secondAttribute="leading" constant="8" id="Efu-sH-giy"/>
                                                 <constraint firstItem="X0l-1r-PRZ" firstAttribute="leading" secondItem="7aP-9b-KAZ" secondAttribute="trailing" constant="20" id="H7f-Ut-9PD"/>
-                                                <constraint firstItem="3Bp-pw-Gg3" firstAttribute="top" secondItem="z83-lU-LCV" secondAttribute="top" constant="44" id="TBA-E2-8Yy"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Bp-pw-Gg3" secondAttribute="trailing" id="UW0-JE-L31"/>
                                                 <constraint firstItem="X0l-1r-PRZ" firstAttribute="top" secondItem="z83-lU-LCV" secondAttribute="top" id="gMj-py-8MN"/>
                                                 <constraint firstItem="3Bp-pw-Gg3" firstAttribute="leading" secondItem="z83-lU-LCV" secondAttribute="leading" id="jd4-cS-duG"/>
@@ -133,8 +135,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="delegate" destination="khi-Nd-w7w" id="ieg-uF-U9P"/>
                                             <outlet property="expandBtn" destination="X0l-1r-PRZ" id="qiz-Us-koY"/>
                                             <outlet property="expandView" destination="3Bp-pw-Gg3" id="uCQ-p8-eJI"/>
+                                            <outlet property="expandViewHeight" destination="O4l-Ya-Sy8" id="BxV-fS-MGp"/>
                                             <outlet property="titleLabel" destination="7aP-9b-KAZ" id="2C9-SN-NnK"/>
                                         </connections>
                                     </tableViewCell>
@@ -153,7 +157,7 @@
                             <constraint firstItem="wcD-ev-9b4" firstAttribute="leading" secondItem="eCF-85-LHV" secondAttribute="leading" id="y0v-hb-mEJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="table" id="ehP-bI-fX1"/>
+                    <tabBarItem key="tabBarItem" title="History" image="history" id="ehP-bI-fX1"/>
                     <connections>
                         <outlet property="dataSource" destination="wJG-I4-UJB" id="qQ0-wU-woK"/>
                         <segue destination="Zw5-zI-nz3" kind="push" identifier="toWebView" id="buU-Es-5b1"/>
@@ -166,16 +170,17 @@
                         <outlet property="tableView" destination="wcD-ev-9b4" id="GH6-Bc-l9e"/>
                     </connections>
                 </customObject>
-                <customObject id="OH0-Jg-gWF" customClass="ResultViewSelectBehaviour">
-                    <connections>
-                        <outlet property="owner" destination="ljP-HT-co0" id="EkH-c5-U2p"/>
-                        <outlet property="resultViewCtrl" destination="ljP-HT-co0" id="KcV-7v-vdh"/>
-                    </connections>
-                </customObject>
                 <customObject id="4fL-lc-VDY" customClass="MultiplexerProxyBehaviour">
                     <connections>
                         <outletCollection property="targets" destination="wJG-I4-UJB" id="BTu-q9-VVP"/>
-                        <outletCollection property="targets" destination="OH0-Jg-gWF" id="1Gn-wO-Iij"/>
+                    </connections>
+                </customObject>
+                <customObject id="khi-Nd-w7w" customClass="UrlResultTableViewCellDelegate">
+                    <connections>
+                        <outlet property="owner" destination="ljP-HT-co0" id="BsE-jP-dYG"/>
+                        <outlet property="resultTableView" destination="wcD-ev-9b4" id="GGX-ka-wGx"/>
+                        <outlet property="resultViewCtrl" destination="ljP-HT-co0" id="D7k-kF-Hse"/>
+                        <outlet property="resultViewDataSource" destination="wJG-I4-UJB" id="f01-lU-2rE"/>
                     </connections>
                 </customObject>
             </objects>
@@ -216,6 +221,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="history" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
         <image name="unfold" width="42" height="42"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
