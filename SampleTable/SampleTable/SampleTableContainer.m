@@ -38,6 +38,7 @@ static CGFloat const titleHeight = 18;
     _rowsContainer = [[UIView alloc] init];
     _tableTitle = [[UILabel alloc] init];
     _tableTitle.text= @"";
+    _tableTitle.numberOfLines = 0;
     _tableTitle.copyingEnabled = YES;
     _tableTitle.font = [UIFont fontWithName:_tableTitle.font.familyName size:12];
     _rowsContainer.translatesAutoresizingMaskIntoConstraints = NO;

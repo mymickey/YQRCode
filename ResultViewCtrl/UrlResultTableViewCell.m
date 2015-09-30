@@ -71,12 +71,16 @@ static const CGFloat expandViewBtnWidth = 50;
     SampleTableContainer * ct = [[SampleTableContainer alloc] initWithData:mdict];
     [_expandView addSubview:ct];
     ct.tableTitle.text = expandTableTitle;
-    [self layoutExpandViewTable:ct];
+    
     CGFloat tableHeight = ct.frame.size.height;
+    BOOL isURL = _dataModel.dataType == ResultItemTypeUrl;
     CGRect rect = CGRectMake(frame.origin.x, frame.origin.y, frame.size.width,tableHeight + expandViewBottomPadding + expandViewBtnCtHeight );
     //_expandView.frame = rect;
-    _expandViewHeight.constant = rect.size.height;
-    [self createExpandBtnsCt];
+    _expandViewHeight.constant = isURL ? rect.size.height : 0;
+    if (isURL) {
+        [self layoutExpandViewTable:ct];
+        [self createExpandBtnsCt];
+    }
     _isExpand = YES;
     [_expandBtn setImage:[UIImage imageNamed:@"unfold-2"] forState:UIControlStateNormal];
     _titleLabel.numberOfLines = 0;
@@ -102,20 +106,26 @@ static const CGFloat expandViewBtnWidth = 50;
     [_expandView addConstraints:arr];
     [_expandView addConstraints:arr2];
 }
+//返回SampleTableContainer所需数据字典
 -(NSDictionary *)getDataDict
 {
-    NSURLComponents *urlcoms = [[NSURLComponents alloc] initWithString:_dataModel.data];
-    NSArray *queryItem = urlcoms.queryItems;
-    NSInteger count = [queryItem count];
     NSMutableDictionary *mdict = [NSMutableDictionary new];
-    for (NSInteger i = 0; count > i ; i++) {
-        NSURLQueryItem *dict = [queryItem objectAtIndex:i];
-        [mdict setValue:dict.value forKey:dict.name];
+    NSURLComponents *urlcoms = [[NSURLComponents alloc] initWithString:_dataModel.data];
+    if (_dataModel.dataType == ResultItemTypeUrl) {
+        NSArray *queryItem = urlcoms.queryItems;
+        NSInteger count = [queryItem count];
+        for (NSInteger i = 0; count > i ; i++) {
+            NSURLQueryItem *dict = [queryItem objectAtIndex:i];
+            [mdict setValue:dict.value forKey:dict.name];
+        }
+        
+        expandTableTitle = [NSString stringWithFormat:@"%@://%@%@",urlcoms.scheme,urlcoms.host,urlcoms.path];
+        if (urlcoms.port.intValue) {
+            expandTableTitle = [NSString stringWithFormat:@"%@%i",expandTableTitle,urlcoms.port.intValue];
+        }
     }
-    
-    expandTableTitle = [NSString stringWithFormat:@"%@://%@%@",urlcoms.scheme,urlcoms.host,urlcoms.path];
-    if (urlcoms.port.intValue) {
-        expandTableTitle = [NSString stringWithFormat:@"%@%i",expandTableTitle,urlcoms.port.intValue];
+    else{
+        expandTableTitle = @"";
     }
     return mdict;
 }
@@ -264,7 +274,12 @@ static const CGFloat expandViewBtnWidth = 50;
     CGFloat titleLabelExpandHeight = [self calculateTitleLabelExpandHeight];
     NSDictionary *mdict = [self getDataDict];
     SampleTableContainer * ct = [[SampleTableContainer alloc] initWithData:mdict];
-    return [ct calculateHeight] + expandViewBottomPadding + expandViewBtnCtHeight + titleLabelExpandHeight;
+    CGFloat tableHeight = [ct calculateHeight];
+    CGFloat height = tableHeight + expandViewBottomPadding + expandViewBtnCtHeight + titleLabelExpandHeight;
+    if (_dataModel.dataType == ResultItemTypeUnknow) {
+        height = titleLabelExpandHeight;
+    }
+    return height;
 }
 //计算titleLabel展开后的高度
 -(CGFloat)calculateTitleLabelExpandHeight

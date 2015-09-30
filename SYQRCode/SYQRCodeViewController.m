@@ -162,7 +162,7 @@ static const float kReaderViewHeight = 200;
     
     //设置输出的格式
     //一定要先设置会话的输出为output之后，再指定输出的元数据类型
-    [output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
+    [output setMetadataObjectTypes:@[AVMetadataObjectTypeQRCode,AVMetadataObjectTypeEAN13Code, AVMetadataObjectTypeEAN8Code, AVMetadataObjectTypeCode128Code]];
     
     //设置预览图层
     AVCaptureVideoPreviewLayer *preview = [AVCaptureVideoPreviewLayer layerWithSession:session];

@@ -22,9 +22,10 @@ static NSString *const cellId = @"UrlResultCell";
 {
     _tableView = tableView;
     _rowDatas = [NSMutableArray new];
+    [self addScanResult:@"http://open.alink.aliyun.com/alinkpackage/test.php"];
     [self addScanResult:@"http://baidu.com/?q=1"];
     [self addScanResult:@"https://s.taobao.com/search?initiative_id=tbindexz_20150903&spm=a21bo.7724922.8452-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=iphone6%E6%89%8B%E6%9C%BA%E5%A3%B3&suggest=0_1&_input_charset=utf-8&wq=iphone&suggest_query=iphone&source=suggest"];
-    
+    [self addScanResult:@"123242342342341231242599995612324234234234123124259999561232423423423412312425999956123242342342341231242599995612324234234234123124259999561232423423423412312425999956"];
     _urlPrototypeCell = [_tableView dequeueReusableCellWithIdentifier:cellId];
 }
 -(void)addModel:(ResultItemModel *)model
@@ -129,11 +130,11 @@ static NSString *const cellId = @"UrlResultCell";
     if (oldPath) {
         [paths addObject:oldPath];
     }
-    [paths addObject:currentClickIndexPath];
-    if ([paths count] == 2) {
-        if ([paths[0] compare:paths[1]] == NSOrderedSame ) {
-            [paths removeObjectAtIndex:0];
-        }
+    if (currentClickIndexPath) {
+        [paths addObject:currentClickIndexPath];
+    }
+    if ([paths count] == 2 && [paths[0] compare:paths[1]] == NSOrderedSame) {
+        [paths removeObjectAtIndex:0];
     }
     [_tableView beginUpdates];
     [_tableView reloadRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationNone];
