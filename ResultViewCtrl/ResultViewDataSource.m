@@ -27,6 +27,8 @@ static NSString *const cellId = @"UrlResultCell";
     [self addScanResult:@"https://s.taobao.com/search?initiative_id=tbindexz_20150903&spm=a21bo.7724922.8452-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=iphone6%E6%89%8B%E6%9C%BA%E5%A3%B3&suggest=0_1&_input_charset=utf-8&wq=iphone&suggest_query=iphone&source=suggest"];
     [self addScanResult:@"123242342342341231242599995612324234234234123124259999561232423423423412312425999956123242342342341231242599995612324234234234123124259999561232423423423412312425999956"];
     _urlPrototypeCell = [_tableView dequeueReusableCellWithIdentifier:cellId];
+    tableView.tableFooterView = [UIView new];
+   
 }
 -(void)addModel:(ResultItemModel *)model
 {
@@ -139,5 +141,24 @@ static NSString *const cellId = @"UrlResultCell";
     [_tableView beginUpdates];
     [_tableView reloadRowsAtIndexPaths:paths withRowAnimation:UITableViewRowAnimationNone];
     [_tableView endUpdates];
+}
+
+//cell分割线缩进
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
 }
 @end

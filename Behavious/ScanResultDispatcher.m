@@ -7,7 +7,7 @@
 //
 
 #import "ScanResultDispatcher.h"
-
+#import <AVFoundation/AVFoundation.h>
 @implementation ScanResultDispatcher
 -(void)setTabBarCtrl:(MainTabBarViewController *)tabBarCtrl
 {
@@ -17,8 +17,9 @@
     _scanViewCtrl = viewCtrls[1];
     _scanViewCtrl.delegate = self;
 }
--(void)scanComplete:(NSString *)resultStr
+-(void)scanComplete:(AVMetadataMachineReadableCodeObject *)obj
 {
+    NSString *resultStr = obj.stringValue;
     _tabBarCtrl.selectedIndex = 0;
     [_resultViewCtrl.dataSource addScanResult:resultStr];
 }

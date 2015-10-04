@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AVFoundation/AVFoundation.h>
 @protocol SYQRCodeViewControllerDelegate <NSObject>
 
--(void)scanComplete:(NSString *)resultStr;
+-(void)scanComplete:(AVMetadataMachineReadableCodeObject *)obj;
 
 @end
 

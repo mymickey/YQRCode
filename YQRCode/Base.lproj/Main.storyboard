@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Nav View Controller-->
         <scene sceneID="swP-AH-K6V">
             <objects>
-                <navigationController navigationBarHidden="YES" id="SP0-Xe-Fya" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="SP0-Xe-Fya" customClass="NavViewController" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0g0-G6-Rle">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -37,12 +37,100 @@
                     <view key="view" contentMode="scaleToFill" id="Rkr-12-iZx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQn-LI-euy" userLabel="imgPickerBtn">
+                                <rect key="frame" x="187" y="30" width="44" height="30"/>
+                                <state key="normal" title="img">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onImagePickerBtnTap:" destination="2ZS-sj-0cX" eventType="touchUpInside" id="STZ-fc-sIW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1i6-QM-hBK">
+                                <rect key="frame" x="260" y="30" width="44" height="30"/>
+                                <state key="normal" title="torch">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onTorchBtnTap:" destination="LhR-Z5-Zet" eventType="touchUpInside" id="10f-7d-0xw"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JoD-8W-QVy" userLabel="scanView">
+                                <rect key="frame" x="0.0" y="184" width="320" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="QRCodeTopLeft" translatesAutoresizingMaskIntoConstraints="NO" id="Nhy-Xy-ZsF">
+                                        <rect key="frame" x="8" y="8" width="16" height="16"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="QRCodebottomLeft" translatesAutoresizingMaskIntoConstraints="NO" id="pts-e5-aRT">
+                                        <rect key="frame" x="8" y="176" width="16" height="16"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="QRCodebottomRight" translatesAutoresizingMaskIntoConstraints="NO" id="bKT-bL-tsO">
+                                        <rect key="frame" x="296" y="176" width="16" height="16"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="QRCodeTopRight" translatesAutoresizingMaskIntoConstraints="NO" id="sDb-Dn-LfU">
+                                        <rect key="frame" x="296" y="8" width="16" height="16"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="bKT-bL-tsO" secondAttribute="trailing" constant="8" id="1V8-Is-Phn"/>
+                                    <constraint firstAttribute="bottom" secondItem="pts-e5-aRT" secondAttribute="bottom" constant="8" id="2ma-HI-eZZ"/>
+                                    <constraint firstItem="Nhy-Xy-ZsF" firstAttribute="leading" secondItem="JoD-8W-QVy" secondAttribute="leading" constant="8" id="H4e-p4-b8n"/>
+                                    <constraint firstItem="sDb-Dn-LfU" firstAttribute="top" secondItem="JoD-8W-QVy" secondAttribute="top" constant="8" id="M5a-hK-II0"/>
+                                    <constraint firstAttribute="trailing" secondItem="sDb-Dn-LfU" secondAttribute="trailing" constant="8" id="Nsp-Ex-I4L"/>
+                                    <constraint firstItem="Nhy-Xy-ZsF" firstAttribute="top" secondItem="JoD-8W-QVy" secondAttribute="top" constant="8" id="eRI-fS-dnu"/>
+                                    <constraint firstItem="pts-e5-aRT" firstAttribute="leading" secondItem="JoD-8W-QVy" secondAttribute="leading" constant="8" id="jT2-T7-upJ"/>
+                                    <constraint firstAttribute="height" constant="200" id="jsM-XK-r8T"/>
+                                    <constraint firstAttribute="bottom" secondItem="bKT-bL-tsO" secondAttribute="bottom" constant="8" id="mQG-3M-ShD"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yn7-fe-8Pq" userLabel="topView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="184"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iNm-fg-YDh" userLabel="bottomView">
+                                <rect key="frame" x="0.0" y="384" width="320" height="184"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="yn7-fe-8Pq" firstAttribute="width" secondItem="Rkr-12-iZx" secondAttribute="width" multiplier="1:1" id="75U-nt-P5P"/>
+                            <constraint firstAttribute="width" secondItem="JoD-8W-QVy" secondAttribute="width" multiplier="1:1" id="9Ec-zX-hoG"/>
+                            <constraint firstItem="JoD-8W-QVy" firstAttribute="top" secondItem="yn7-fe-8Pq" secondAttribute="bottom" id="C9d-3T-yI4"/>
+                            <constraint firstAttribute="centerY" secondItem="JoD-8W-QVy" secondAttribute="centerY" id="ScT-Zd-f0k"/>
+                            <constraint firstAttribute="trailing" secondItem="1i6-QM-hBK" secondAttribute="trailing" constant="16" id="daK-hn-vjG"/>
+                            <constraint firstItem="1i6-QM-hBK" firstAttribute="top" secondItem="Rkr-12-iZx" secondAttribute="top" constant="30" id="fOD-sR-RNo"/>
+                            <constraint firstItem="iNm-fg-YDh" firstAttribute="top" secondItem="JoD-8W-QVy" secondAttribute="bottom" id="gMW-xc-h7W"/>
+                            <constraint firstAttribute="width" secondItem="iNm-fg-YDh" secondAttribute="width" multiplier="1:1" id="q3X-vp-WFw"/>
+                            <constraint firstItem="bQn-LI-euy" firstAttribute="top" secondItem="Rkr-12-iZx" secondAttribute="top" constant="30" id="qF8-tJ-ctL"/>
+                            <constraint firstItem="1i6-QM-hBK" firstAttribute="leading" secondItem="bQn-LI-euy" secondAttribute="trailing" constant="29" id="uSU-6b-YTD"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Scan" image="search" id="Udo-gu-cAf"/>
+                    <connections>
+                        <outlet property="imagePickerBtn" destination="bQn-LI-euy" id="NXc-6v-vf6"/>
+                        <outlet property="scanView" destination="JoD-8W-QVy" id="vYP-vl-X7Y"/>
+                        <outlet property="torchBtn" destination="1i6-QM-hBK" id="N1p-Vr-L6b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhG-LH-RHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="2ZS-sj-0cX"/>
+                <customObject id="2ZS-sj-0cX" customClass="ImagePickerBtnBehaviour">
+                    <connections>
+                        <outlet property="imagePickerBtn" destination="bQn-LI-euy" id="TEK-LL-bdN"/>
+                        <outlet property="imgPickerBtn" destination="bQn-LI-euy" id="rWZ-Ol-NaJ"/>
+                        <outlet property="owner" destination="8oO-MP-yIg" id="Miv-Vq-IHw"/>
+                        <outlet property="scanCtrl" destination="8oO-MP-yIg" id="Jp5-Mn-Hi8"/>
+                    </connections>
+                </customObject>
+                <customObject id="LhR-Z5-Zet" customClass="TorchBtnBehaviour">
+                    <connections>
+                        <outlet property="owner" destination="8oO-MP-yIg" id="3Ee-Ln-F7l"/>
+                        <outlet property="torchBtn" destination="1i6-QM-hBK" id="h8y-AD-sXp"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="510" y="4017"/>
         </scene>
@@ -134,6 +222,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="X0l-1r-PRZ" secondAttribute="trailing" id="s8b-IO-Zy1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="delegate" destination="khi-Nd-w7w" id="ieg-uF-U9P"/>
                                             <outlet property="expandBtn" destination="X0l-1r-PRZ" id="qiz-Us-koY"/>
@@ -221,6 +310,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="QRCodeTopLeft" width="16" height="16"/>
+        <image name="QRCodeTopRight" width="16" height="16"/>
+        <image name="QRCodebottomLeft" width="16" height="16"/>
+        <image name="QRCodebottomRight" width="16" height="16"/>
         <image name="history" width="25" height="25"/>
         <image name="search" width="25" height="25"/>
         <image name="unfold" width="42" height="42"/>

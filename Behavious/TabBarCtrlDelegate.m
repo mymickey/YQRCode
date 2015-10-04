@@ -13,7 +13,6 @@
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController
 {
-    NSLog(@"selected");
     return YES;
 }
 @end
